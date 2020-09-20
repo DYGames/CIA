@@ -26,7 +26,7 @@ public class MainFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_main, container, false);
-        rootView.findViewById(R.id.main_layout).setPadding(Util.dpToPx(20), Util.dpToPx(20), Util.dpToPx(20), getActivity().findViewById(R.id.navigationView).getHeight());
+        rootView.findViewById(R.id.main_layout).setPadding(Util.dpToPx(20), Util.dpToPx(100), Util.dpToPx(20), getActivity().findViewById(R.id.navigationView).getHeight());
         final CustomActionBar actionBar = rootView.findViewById(R.id.main_actionbar);
         final ScrollView main_scrollView = (ScrollView) rootView.findViewById(R.id.main_layout).getParent();
         main_scrollView.setOnTouchListener(new View.OnTouchListener() {
