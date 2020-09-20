@@ -1,5 +1,6 @@
 package com.dygames.cia;
 
+import android.app.Activity;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.Log;
@@ -9,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.ScrollView;
 import android.widget.SearchView;
 
 import androidx.annotation.NonNull;
@@ -24,8 +26,16 @@ public class MainFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_main, container, false);
-
         rootView.findViewById(R.id.main_layout).setPadding(Util.dpToPx(20), Util.dpToPx(20), Util.dpToPx(20), getActivity().findViewById(R.id.navigationView).getHeight());
+        final CustomActionBar actionBar = rootView.findViewById(R.id.main_actionbar);
+        final ScrollView main_scrollView = (ScrollView) rootView.findViewById(R.id.main_layout).getParent();
+        main_scrollView.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                actionBar.setColor(main_scrollView.getScrollY());
+                return false;
+            }
+        });
 
         RecyclerView recommend_tut = rootView.findViewById(R.id.recommend_tut_scroll);
         recommend_tut.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false));

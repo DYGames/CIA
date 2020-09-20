@@ -14,6 +14,7 @@
             android:id="@+id/main_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="75dp"
             android:paddingLeft="20dp"
             android:paddingTop="20dp"
             android:paddingRight="20dp">
@@ -23,6 +24,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="추천 강의"
+                android:textSize="30dp"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -31,6 +33,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="빅데이터를 활용한 맞춤 강의 추천"
+                android:textSize="15dp"
                 app:layout_constraintLeft_toLeftOf="@id/recommend_tut_headText"
                 app:layout_constraintTop_toBottomOf="@id/recommend_tut_headText" />
 
@@ -39,14 +42,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/recommend_tut_subText" >
-            </androidx.recyclerview.widget.RecyclerView>
+                app:layout_constraintTop_toBottomOf="@id/recommend_tut_subText"></androidx.recyclerview.widget.RecyclerView>
 
             <TextView
                 android:id="@+id/recommend_study_headText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="추천 스터디"
+                android:textSize="30dp"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/recommend_tut_scroll" />
 
@@ -55,6 +58,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="빅데이터를 활용한 맞춤 스터디 추천"
+                android:textSize="15dp"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/recommend_study_headText" />
 
@@ -70,6 +74,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="카테고리"
+                android:textSize="30dp"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/recommend_study_scroll" />
 
@@ -84,57 +89,57 @@
                     style="@style/Widget.MaterialComponents.Chip.Action"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textAppearance="@style/TextStyle"
-                    android:text="카테고리 A" />
+                    android:text="카테고리 A"
+                    android:textAppearance="@style/TextStyle" />
 
                 <com.google.android.material.chip.Chip
                     style="@style/Widget.MaterialComponents.Chip.Action"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textAppearance="@style/TextStyle"
-                    android:text="카테고리 B" />
+                    android:text="카테고리 B"
+                    android:textAppearance="@style/TextStyle" />
 
                 <com.google.android.material.chip.Chip
                     style="@style/Widget.MaterialComponents.Chip.Action"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textAppearance="@style/TextStyle"
-                    android:text="카테고리 C" />
+                    android:text="카테고리 C"
+                    android:textAppearance="@style/TextStyle" />
 
                 <com.google.android.material.chip.Chip
                     style="@style/Widget.MaterialComponents.Chip.Action"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textAppearance="@style/TextStyle"
-                    android:text="카테고리 DDD" />
+                    android:text="카테고리 DDD"
+                    android:textAppearance="@style/TextStyle" />
 
                 <com.google.android.material.chip.Chip
                     style="@style/Widget.MaterialComponents.Chip.Action"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textAppearance="@style/TextStyle"
-                    android:text="카테고리 EEEEEEE" />
+                    android:text="카테고리 EEEEEEE"
+                    android:textAppearance="@style/TextStyle" />
 
                 <com.google.android.material.chip.Chip
                     style="@style/Widget.MaterialComponents.Chip.Action"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textAppearance="@style/TextStyle"
-                    android:text="카테고리 FFFFFFFFFFFFFFFFFF" />
+                    android:text="카테고리 FFFFFFFFFFFFFFFFFF"
+                    android:textAppearance="@style/TextStyle" />
 
                 <com.google.android.material.chip.Chip
                     style="@style/Widget.MaterialComponents.Chip.Action"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textAppearance="@style/TextStyle"
-                    android:text="카테고리 G" />
+                    android:text="카테고리 G"
+                    android:textAppearance="@style/TextStyle" />
 
                 <com.google.android.material.chip.Chip
                     style="@style/Widget.MaterialComponents.Chip.Action"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textAppearance="@style/TextStyle"
-                    android:text="카테고리 HHHHHHH" />
+                    android:text="카테고리 HHHHHHH"
+                    android:textAppearance="@style/TextStyle" />
             </com.google.android.material.chip.ChipGroup>
 
             <TextView
@@ -142,6 +147,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="인기 강의"
+                android:textSize="30dp"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/category_chipgroup" />
 
@@ -150,6 +156,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="현재 가장 많이 수강중인 강의 추천"
+                android:textSize="15dp"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/trend_tut_headText" />
 
@@ -165,6 +172,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="인기 스터디"
+                android:textSize="30dp"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/trend_tut_scroll" />
 
@@ -173,6 +181,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="현재 가장 많이 수강중인 스터디 추천"
+                android:textSize="15dp"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/trend_study_headText" />
 
@@ -186,5 +195,22 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>
+
+    <com.dygames.cia.CustomActionBar
+        android:id="@+id/main_actionbar"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:src="@mipmap/ic_launcher"
+        android:adjustViewBounds="true"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

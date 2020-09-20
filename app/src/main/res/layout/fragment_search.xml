@@ -28,7 +28,8 @@
             android:id="@+id/search_tut_text_result"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="강의 검색 결과" />
+            android:text="강의 검색 결과"
+            android:textSize="30dp" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/main_search_tut_scroll"
@@ -43,7 +44,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingTop="10dp"
-            android:text="스터디 검색 결과" />
+            android:text="스터디 검색 결과"
+            android:textSize="30dp" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/main_search_study_scroll"
