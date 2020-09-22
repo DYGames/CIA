@@ -1,16 +1,12 @@
 package com.dygames.cia;
 
-import android.app.Activity;
-import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -18,7 +14,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class TutAdapter extends RecyclerView.Adapter<TutAdapter.ViewHolder> {
 
-    private com.dygames.cia.DetailFragment fragmentDetail = new com.dygames.cia.DetailFragment();
+    private DetailStudyFragment fragmentDetail = new DetailStudyFragment();
 
     public static class Data {
         public String title;

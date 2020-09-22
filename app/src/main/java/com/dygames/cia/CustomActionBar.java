@@ -34,7 +34,7 @@ public class CustomActionBar extends View {
     }
 
     public void setColor(int position) {
-        shader = new LinearGradient(0, 0, 0, getHeight(), Color.argb((int) (255 * (Math.min(position, 200) / 200f)), 0, 0, 0), Color.TRANSPARENT, Shader.TileMode.CLAMP);
+        shader = new LinearGradient(0, 0, 0, getHeight(), Color.argb((int) (255 * (Math.min(Math.max(position, 0), 200) / 200f)), 0, 0, 0), Color.TRANSPARENT, Shader.TileMode.CLAMP);
         invalidate();
     }
 }

@@ -8,10 +8,14 @@ import androidx.fragment.app.FragmentTransaction;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.MotionEvent;
+import android.view.View;
 import android.widget.ListView;
 import android.widget.SearchView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.chip.Chip;
+import com.google.android.material.chip.ChipGroup;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -33,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 FragmentTransaction transaction = fragmentManager.beginTransaction();
 
-                ((BottomNavigationView) findViewById(R.id.navigationView)).getMenu().setGroupCheckable(0, true, true);;
+                ((BottomNavigationView) findViewById(R.id.navigationView)).getMenu().setGroupCheckable(0, true, true);
                 switch (menuItem.getItemId()) {
                     case R.id.bottom_main:
                         transaction.replace(R.id.frameLayout, fragmentMain).commitAllowingStateLoss();
@@ -54,4 +58,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+   //@Override
+   //public void onBackPressed() {
+   //}
 }
