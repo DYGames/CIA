@@ -4,8 +4,10 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -44,6 +46,31 @@ public class CategoryFragment extends Fragment {
             category_layout.addView(v);
         }
 
+        final TextView study_headText = rootView.findViewById(R.id.category_study_headText);
+        final TextView tut_headText = rootView.findViewById(R.id.category_tut_headText);
+
+        study_headText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                study_headText.setTextColor(0xFF000000);
+                tut_headText.setTextColor(0xFF909090);
+            }
+        });
+        tut_headText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tut_headText.setTextColor(0xFF000000);
+                study_headText.setTextColor(0xFF909090);
+            }
+        });
+
+        /*Spinner category_spinner = rootView.findViewById(R.id.category_spinner);
+        ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>
+                (this, android.R.layout.simple_spinner_item,
+                        spinnerArray); //selected item will look like a spinner set from XML
+        spinnerArrayAdapter.setDropDownViewResource(android.R.layout
+                .simple_spinner_dropdown_item);
+        category_spinner.setAdapter(spinnerArrayAdapter);*/
         return rootView;
     }
 }

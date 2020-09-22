@@ -101,7 +101,7 @@ public class MainFragment extends Fragment {
 
         ChipGroup chipGroup = rootView.findViewById(R.id.category_chipgroup);
         for (int i = 0, c = chipGroup.getChildCount(); i < c; i++) {
-            ((Chip) chipGroup.getChildAt(i)).setOnClickListener(new View.OnClickListener() {
+            (chipGroup.getChildAt(i)).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
