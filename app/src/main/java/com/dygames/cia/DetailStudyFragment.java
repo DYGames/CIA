@@ -17,7 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 public class DetailStudyFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_detail_study, container, false);
-        RecyclerView member_scroll = rootView.findViewById(R.id.detail_member_scroll);
+        RecyclerView member_scroll = rootView.findViewById(R.id.detail_study_member_scroll);
         member_scroll.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false));
         member_scroll.setHasFixedSize(true);
         member_scroll.setAdapter(new DetailMemberAdapter(new DetailMemberAdapter.Data[]
@@ -29,13 +29,13 @@ public class DetailStudyFragment extends Fragment {
                         new DetailMemberAdapter.Data("김도엽 6", R.drawable.ic_launcher_background),
                 }));
 
-        final ConstraintLayout detail_layout = (ConstraintLayout) rootView.findViewById(R.id.detail_layout);
-        detail_layout.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+        final ConstraintLayout study_layout = (ConstraintLayout) rootView.findViewById(R.id.detail_study_layout);
+        study_layout.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
             @Override
             public void onGlobalLayout() {
-                detail_layout.getViewTreeObserver().removeOnGlobalLayoutListener(this);
-                ((FrameLayout.LayoutParams) detail_layout.getLayoutParams()).setMargins(0, detail_layout.getRootView().findViewById(R.id.detail_thumbnail).getHeight(), 0, 0);
-                detail_layout.setPadding(Util.dpToPx(20), 0, Util.dpToPx(20), 400);
+                study_layout.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+                ((FrameLayout.LayoutParams) study_layout.getLayoutParams()).setMargins(0, study_layout.getRootView().findViewById(R.id.detail_study_thumbnail).getHeight(), 0, 0);
+                study_layout.setPadding(Util.dpToPx(20), 0, Util.dpToPx(20), 400);
             }
         });
         return rootView;

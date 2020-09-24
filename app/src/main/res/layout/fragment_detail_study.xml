@@ -6,7 +6,7 @@
 
 
     <ImageView
-        android:id="@+id/detail_thumbnail"
+        android:id="@+id/detail_study_thumbnail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:adjustViewBounds="true"
@@ -21,7 +21,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/detail_layout"
+            android:id="@+id/detail_study_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#FFFFFF"
@@ -32,7 +32,7 @@
             app:layout_constraintBottom_toBottomOf="parent">
 
             <TextView
-                android:id="@+id/detail_headText"
+                android:id="@+id/detail_study_headText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
@@ -43,76 +43,76 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <Button
-                android:id="@+id/detail_sign_button"
+                android:id="@+id/detail_study_sign_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
                 android:text="이 스터디에 가입하기"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/detail_headText" />
+                app:layout_constraintTop_toBottomOf="@id/detail_study_headText" />
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/detail_member_scroll"
+                android:id="@+id/detail_study_member_scroll"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/detail_sign_button" />
+                app:layout_constraintTop_toBottomOf="@id/detail_study_sign_button" />
 
             <TextView
-                android:id="@+id/detail_detail_headText"
+                android:id="@+id/detail_study_detail_headText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
                 android:text="세부 설명"
                 android:textSize="30dp"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/detail_member_scroll" />
+                app:layout_constraintTop_toBottomOf="@id/detail_study_member_scroll" />
 
             <TextView
-                android:id="@+id/detail_detail_text"
+                android:id="@+id/detail_study_detail_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Disclaimer This project is directly inspired by the BLOKK font. The idea is simple and brilliant, but I wasn't happy with functional aspects of that implementation of the idea, and it isn't an open source project, so I created my own. Credit where credit is due. FAQ Q: What's different about this compared to BLOKK? A: BLOKK has unusually large character widths, which adds much length to  bits of dummy text, and also creates unecessarily ragged rags in my copy. Redacted solves this by using sane character widths; averaging character widths of narrow, regular, and wide characters of standard fonts. This gives a more realistic look to the text and helps it fit into narrow columns like real text would. Redacted Font also comes with script versions in three weights, regular, bold and light."
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/detail_detail_headText" />
+                app:layout_constraintTop_toBottomOf="@id/detail_study_detail_headText" />
 
             <TextView
-                android:id="@+id/detail_date_headText"
+                android:id="@+id/detail_study_date_headText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
                 android:text="시간"
                 android:textSize="30dp"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/detail_detail_text" />
+                app:layout_constraintTop_toBottomOf="@id/detail_study_detail_text" />
 
             <TextView
-                android:id="@+id/detail_date_text"
+                android:id="@+id/detail_study_date_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Disclaimer This project is directly inspired by the BLOKK font. The idea is simple and brilliant, but I wasn't happy with functional aspects of that implementation of the idea, and it isn't an open source project, so I created my own. Credit where credit is due. FAQ Q: What's different about this compared to BLOKK? A: BLOKK has unusually large character widths, which adds much length to  bits of dummy text, and also creates unecessarily ragged rags in my copy. Redacted solves this by using sane character widths; averaging character widths of narrow, regular, and wide characters of standard fonts. This gives a more realistic look to the text and helps it fit into narrow columns like real text would. Redacted Font also comes with script versions in three weights, regular, bold and light."
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/detail_date_headText" />
+                app:layout_constraintTop_toBottomOf="@id/detail_study_date_headText" />
 
             <TextView
-                android:id="@+id/detail_location_headText"
+                android:id="@+id/detail_study_location_headText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
                 android:text="장소"
                 android:textSize="30dp"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/detail_date_text" />
+                app:layout_constraintTop_toBottomOf="@id/detail_study_date_text" />
 
             <TextView
-                android:id="@+id/detail_location_text"
+                android:id="@+id/detail_study_location_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Disclaimer This project is directly inspired by the BLOKK font. The idea is simple and brilliant, but I wasn't happy with functional aspects of that implementation of the idea, and it isn't an open source project, so I created my own. Credit where credit is due. FAQ Q: What's different about this compared to BLOKK? A: BLOKK has unusually large character widths, which adds much length to  bits of dummy text, and also creates unecessarily ragged rags in my copy. Redacted solves this by using sane character widths; averaging character widths of narrow, regular, and wide characters of standard fonts. This gives a more realistic look to the text and helps it fit into narrow columns like real text would. Redacted Font also comes with script versions in three weights, regular, bold and light."
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/detail_location_headText" />
+                app:layout_constraintTop_toBottomOf="@id/detail_study_location_headText" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

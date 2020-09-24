@@ -40,7 +40,7 @@ public class DetailMemberAdapter extends RecyclerView.Adapter<DetailMemberAdapte
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View holderView = LayoutInflater.from(parent.getContext()).inflate(R.layout.view_detail_member, parent, false);
+        View holderView = LayoutInflater.from(parent.getContext()).inflate(R.layout.view_detail_study_member, parent, false);
         DetailMemberAdapter.ViewHolder h = new DetailMemberAdapter.ViewHolder(holderView);
         return h;
     }

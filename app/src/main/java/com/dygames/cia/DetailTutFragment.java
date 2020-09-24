@@ -17,7 +17,8 @@ import androidx.recyclerview.widget.RecyclerView;
 public class DetailTutFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_detail_study, container, false);
-        RecyclerView member_scroll = rootView.findViewById(R.id.detail_member_scroll);
+        //TODO : detail tut scroll => view detail tut item (make adapter)
+        RecyclerView member_scroll = rootView.findViewById(R.id.detail_tut_scroll);
         member_scroll.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false));
         member_scroll.setHasFixedSize(true);
         member_scroll.setAdapter(new DetailMemberAdapter(new DetailMemberAdapter.Data[]
@@ -29,13 +30,13 @@ public class DetailTutFragment extends Fragment {
                         new DetailMemberAdapter.Data("김도엽 6", R.drawable.ic_launcher_background),
                 }));
 
-        final ConstraintLayout detail_layout = (ConstraintLayout) rootView.findViewById(R.id.detail_layout);
-        detail_layout.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+        final ConstraintLayout tut_layout = (ConstraintLayout) rootView.findViewById(R.id.detail_tut_layout);
+        tut_layout.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
             @Override
             public void onGlobalLayout() {
-                detail_layout.getViewTreeObserver().removeOnGlobalLayoutListener(this);
-                ((FrameLayout.LayoutParams) detail_layout.getLayoutParams()).setMargins(0, detail_layout.getRootView().findViewById(R.id.detail_thumbnail).getHeight(), 0, 0);
-                detail_layout.setPadding(Util.dpToPx(20), 0, Util.dpToPx(20), 400);
+                tut_layout.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+                ((FrameLayout.LayoutParams) tut_layout.getLayoutParams()).setMargins(0, tut_layout.getRootView().findViewById(R.id.detail_tut_thumbnail).getHeight(), 0, 0);
+                tut_layout.setPadding(Util.dpToPx(20), 0, Util.dpToPx(20), 400);
             }
         });
         return rootView;
