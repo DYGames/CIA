@@ -64,13 +64,19 @@ public class CategoryFragment extends Fragment {
             }
         });
 
-        /*Spinner category_spinner = rootView.findViewById(R.id.category_spinner);
-        ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>
-                (this, android.R.layout.simple_spinner_item,
-                        spinnerArray); //selected item will look like a spinner set from XML
+        Spinner category_spinner = rootView.findViewById(R.id.category_spinner);
+        String[] spinnerArray = {"경제", "과학", "기술"};
+        ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_item, spinnerArray); //selected item will look like a spinner set from XML
         spinnerArrayAdapter.setDropDownViewResource(android.R.layout
                 .simple_spinner_dropdown_item);
-        category_spinner.setAdapter(spinnerArrayAdapter);*/
+        category_spinner.setAdapter(spinnerArrayAdapter);
+
+        Spinner sort_spinner = rootView.findViewById(R.id.sort_spinner);
+        String[] sortArray = {"인기순", "날짜순", "이름순"};
+        ArrayAdapter<String> sortAdapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_item, sortArray); //selected item will look like a spinner set from XML
+        sortAdapter.setDropDownViewResource(android.R.layout
+                .simple_spinner_dropdown_item);
+        sort_spinner.setAdapter(sortAdapter);
         return rootView;
     }
 }

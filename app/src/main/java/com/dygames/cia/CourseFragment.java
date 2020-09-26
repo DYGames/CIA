@@ -36,16 +36,14 @@ public class CourseFragment extends Fragment {
                 new Data("타이틀2", "설명 2", R.drawable.ic_launcher_foreground),
                 new Data("타이틀3", "설명 3", R.drawable.ic_launcher_foreground),
                 new Data("타이틀4", "설명 4", R.drawable.ic_launcher_foreground),
-                new Data("타이틀5", "설명 5", R.drawable.ic_launcher_foreground),
-                new Data("타이틀6", "설명 6", R.drawable.ic_launcher_foreground),
-                new Data("타이틀7", "설명 7", R.drawable.ic_launcher_foreground),};
+                new Data("타이틀5", "설명 5", R.drawable.ic_launcher_foreground),};
         LinearLayout tut_result = rootView.findViewById(R.id.course_tut_result);
 
         for (int i = 0; i < tut_data.length; i++) {
-            View v = inflater.inflate(R.layout.view_my_course, tut_result, false);
-            ((ImageView) v.findViewById(R.id.course_thumbnail)).setBackgroundResource(tut_data[i].thumbnailID);
-            ((TextView) v.findViewById(R.id.course_title)).setText(tut_data[i].title);
-            ((TextView) v.findViewById(R.id.course_desc)).setText(tut_data[i].desc);
+            View v = inflater.inflate(R.layout.view_my_tut, tut_result, false);
+            ((ImageView) v.findViewById(R.id.my_tut_thumbnail)).setBackgroundResource(tut_data[i].thumbnailID);
+            ((TextView) v.findViewById(R.id.my_tut_title)).setText(tut_data[i].title);
+            ((TextView) v.findViewById(R.id.my_tut_desc)).setText(tut_data[i].desc);
             tut_result.addView(v);
         }
 
@@ -53,16 +51,31 @@ public class CourseFragment extends Fragment {
                 new Data("타이틀22", "설명 22", R.drawable.ic_launcher_foreground),
                 new Data("타이틀33", "설명 33", R.drawable.ic_launcher_foreground),
                 new Data("타이틀44", "설명 44", R.drawable.ic_launcher_foreground),
-                new Data("타이틀55", "설명 55", R.drawable.ic_launcher_foreground),
-                new Data("타이틀66", "설명 66", R.drawable.ic_launcher_foreground),
-                new Data("타이틀77", "설명 77", R.drawable.ic_launcher_foreground),};
+                new Data("타이틀55", "설명 55", R.drawable.ic_launcher_foreground),};
         LinearLayout study_result = rootView.findViewById(R.id.course_study_result);
 
         for (int i = 0; i < study_data.length; i++) {
-            View v = inflater.inflate(R.layout.view_my_course, study_result, false);
-            ((ImageView) v.findViewById(R.id.course_thumbnail)).setBackgroundResource(study_data[i].thumbnailID);
-            ((TextView) v.findViewById(R.id.course_title)).setText(study_data[i].title);
-            ((TextView) v.findViewById(R.id.course_desc)).setText(study_data[i].desc);
+            View v = inflater.inflate(R.layout.view_my_study, study_result, false);
+            ((ImageView) v.findViewById(R.id.my_study_thumbnail)).setBackgroundResource(study_data[i].thumbnailID);
+            ((TextView) v.findViewById(R.id.my_study_title)).setText(study_data[i].title);
+            ((TextView) v.findViewById(R.id.my_study_desc)).setText(study_data[i].desc);
+
+            RecyclerView member_scroll = v.findViewById(R.id.my_study_member_scroll);
+            member_scroll.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false));
+            member_scroll.setHasFixedSize(true);
+            member_scroll.setAdapter(new DetailMemberAdapter(new DetailMemberAdapter.Data[]
+                    {new DetailMemberAdapter.Data("", R.drawable.ic_launcher_background),
+                            new DetailMemberAdapter.Data("", R.drawable.ic_launcher_background),
+                            new DetailMemberAdapter.Data("", R.drawable.ic_launcher_background),
+                            new DetailMemberAdapter.Data("", R.drawable.ic_launcher_background),
+                            new DetailMemberAdapter.Data("", R.drawable.ic_launcher_background),
+                            new DetailMemberAdapter.Data("", R.drawable.ic_launcher_background),
+                            new DetailMemberAdapter.Data("", R.drawable.ic_launcher_background),
+                            new DetailMemberAdapter.Data("", R.drawable.ic_launcher_background),
+                            new DetailMemberAdapter.Data("", R.drawable.ic_launcher_background),
+                            new DetailMemberAdapter.Data("", R.drawable.ic_launcher_background),
+                    }));
+
             study_result.addView(v);
         }
 
