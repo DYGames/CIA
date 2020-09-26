@@ -26,12 +26,6 @@ public class InfoFragment extends Fragment {
             });
         }
 
-        rootView.findViewById(R.id.fab).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                
-            }
-        });
         return rootView;
     }
 }
