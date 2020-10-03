@@ -20,6 +20,8 @@ import com.google.android.material.chip.ChipGroup;
 public class MainFragment extends Fragment {
 
     private com.dygames.cia.CategoryFragment categoryFragment = new com.dygames.cia.CategoryFragment();
+    private com.dygames.cia.UploadStudyFragment uploadStudyFragment = new com.dygames.cia.UploadStudyFragment();
+    private com.dygames.cia.UploadTutFragment uploadTutFragment = new com.dygames.cia.UploadTutFragment();
 
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_main, container, false);
@@ -101,12 +103,32 @@ public class MainFragment extends Fragment {
             });
         }
 
+        final View fab_study = rootView.findViewById(R.id.fab_study_upload);
+        final View fab_tut = rootView.findViewById(R.id.fab_tut_upload);
         rootView.findViewById(R.id.fab).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                fab_study.setVisibility(fab_study.getVisibility() == View.VISIBLE ? View.INVISIBLE : View.VISIBLE);
+                fab_tut.setVisibility(fab_tut.getVisibility() == View.VISIBLE ? View.INVISIBLE : View.VISIBLE);
             }
         });
+
+        fab_study.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
+                transaction.replace(R.id.frameLayout, uploadStudyFragment).commitAllowingStateLoss();
+            }
+        });
+
+        fab_tut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
+                transaction.replace(R.id.frameLayout, uploadTutFragment).commitAllowingStateLoss();
+            }
+        });
+
 
         return rootView;
     }
