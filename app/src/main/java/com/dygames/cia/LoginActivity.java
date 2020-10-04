@@ -28,7 +28,7 @@ public class LoginActivity extends AppCompatActivity {
         findViewById(R.id.login_signup_button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, signUpFragment).commitAllowingStateLoss();
+                getSupportFragmentManager().beginTransaction().replace(R.id.login_frameLayout, signUpFragment).commitAllowingStateLoss();
             }
         });
     }
