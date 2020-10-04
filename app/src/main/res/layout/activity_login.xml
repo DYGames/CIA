@@ -27,7 +27,7 @@
             android:id="@+id/login_id_editText"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
-            android:hint="ID"
+            android:hint="Email"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/login_headText" />
@@ -36,7 +36,7 @@
             android:id="@+id/login_pw_editText"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
-            android:hint="PassWord"
+            android:hint="Password"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/login_id_editText" />
@@ -63,8 +63,8 @@
             android:id="@+id/login_kakao_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="카카오 로그인"
             android:layout_marginTop="10dp"
+            android:text="카카오 로그인"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/divider" />
@@ -73,8 +73,8 @@
             android:id="@+id/login_signup_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="회원가입"
             android:layout_marginTop="10dp"
+            android:text="회원가입"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/login_kakao_button" />

@@ -28,6 +28,11 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
+import okhttp3.internal.framed.Header;
+
 public class SignUpFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -44,59 +49,39 @@ public class SignUpFragment extends Fragment {
         signUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ContentValues values = new ContentValues();
-                values.put("name", name.getText().toString().trim());
-                values.put("password", pw.getText().toString().trim());
-                values.put("email", email.getText().toString().trim());
-                values.put("phonenm", phone.getText().toString().trim().replace("-", ""));
-                HttpURLConnection urlConn = null;
-                try {
-                    URL url = new URL("http://cia777.cafe24.com/api/users/signup");
-                    urlConn = (HttpURLConnection) url.openConnection();
 
-                    urlConn.setReadTimeout(10000);
-                    urlConn.setConnectTimeout(15000);
-                    urlConn.setRequestMethod("POST");
-                    urlConn.setDoOutput(true);
-                    urlConn.setDoInput(true);
-                    urlConn.setRequestProperty("Accept-Charset", "utf-8");
-                    urlConn.setRequestProperty("Context_Type", "application/x-www-form-urlencoded");
+                new Thread() {
+                    public void run() {
+                        OkHttpClient client = new OkHttpClient();
+                        Request request = new Request.Builder().url(String.format("http://cia777.cafe24.com/api/users/signup?name=%s&password=%s&email=%s&phonenm=%s", name.getText().toString().trim(), pw.getText().toString().trim(),
+                                email.getText().toString().trim(), phone.getText().toString().trim().replace("-", ""))).build();
+                        boolean success = false;
+                        try {
+                            if (client.newCall(request).execute().code() == 200) {
+                                success = true;
+                            } else {
+                            }
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
 
-                    PrintWriter ppw = new PrintWriter(new OutputStreamWriter(urlConn.getOutputStream()));
-                    ppw.write(String.format("name=%s&password=%s&email=%s&phonenm=%s", name.getText().toString().trim(), pw.getText().toString().trim(),
-                            email.getText().toString().trim(), phone.getText().toString().trim().replace("-", "")));
-                    ppw.flush();
-                    ppw.close();
 
-                    if (urlConn.getResponseCode() != HttpURLConnection.HTTP_OK) {
-                        Toast.makeText(getContext(), "회원 가입에 실패했습니다.", Toast.LENGTH_SHORT).show();
-                    } else {
-                        Toast.makeText(getContext(), "회원 가입에 성공했습니다.", Toast.LENGTH_SHORT).show();
-                        getActivity().getFragmentManager().popBackStack();
+                        final boolean finalSuccess = success;
+                        getActivity().runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                if (finalSuccess)
+                                {
+                                    //TODO : Close Fragment
+                                    getActivity().getFragmentManager().popBackStackImmediate();
+                                    Toast.makeText(getContext(), "회원가입에 성공했습니다.", Toast.LENGTH_SHORT).show();
+                                }
+                                else
+                                    Toast.makeText(getContext(), "회원가입에 실패했습니다.", Toast.LENGTH_SHORT).show();
+                            }
+                        });
                     }
-                    return;
-/*
-                    BufferedReader reader = new BufferedReader(new InputStreamReader(urlConn.getInputStream(), "UTF-8"));
-
-                    String line;
-                    String page = "";
-
-                    while ((line = reader.readLine()) != null) {
-                        page += line;
-                    }
-*/
-                } catch (MalformedURLException e) {
-                    Log.d("EERRR", e.getMessage());
-                    e.printStackTrace();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                    Log.d("EERRR", e.getMessage());
-
-                } finally {
-                    if (urlConn != null)
-                        urlConn.disconnect();
-                }
-
+                }.start();
             }
         });
         return rootView;
