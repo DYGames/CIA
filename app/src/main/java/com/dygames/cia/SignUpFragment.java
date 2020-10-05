@@ -70,13 +70,10 @@ public class SignUpFragment extends Fragment {
                         getActivity().runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                                if (finalSuccess)
-                                {
-                                    //TODO : Close Fragment
-                                    getActivity().getFragmentManager().popBackStackImmediate();
+                                if (finalSuccess) {
+                                    getActivity().getSupportFragmentManager().beginTransaction().remove(SignUpFragment.this).commit();
                                     Toast.makeText(getContext(), "회원가입에 성공했습니다.", Toast.LENGTH_SHORT).show();
-                                }
-                                else
+                                } else
                                     Toast.makeText(getContext(), "회원가입에 실패했습니다.", Toast.LENGTH_SHORT).show();
                             }
                         });
